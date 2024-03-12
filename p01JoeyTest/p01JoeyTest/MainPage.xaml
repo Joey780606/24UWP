@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="p01JoeyTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:p01JoeyTest"
+    xmlns:practice="using:p01JoeyTest.UControl.Practice" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <!-- <practice:Test01></practice:Test01>  -->
+        <practice:Test02></practice:Test02>
+    </Grid>
+</Page>
