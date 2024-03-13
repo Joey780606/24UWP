@@ -1,0 +1,41 @@
+﻿<UserControl
+    x:Class="p01JoeyTest.UControl.Practice.Test_06.Test06"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:p01JoeyTest.UControl.Practice.Test_06"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <!-- 重要:如下做的目的是可利用 x:Key 為值,重覆利用 -->
+        <DataTemplate x:DataType="local:ModelBooks" x:Key="BookDataTemplate">
+            <StackPanel HorizontalAlignment="Center">
+                <Image Width="150" Source="{x:Bind CoverImage}"/>
+                <TextBlock FontSize="16" Text="{x:Bind Title}" HorizontalAlignment="Center"/>
+                <TextBlock FontSize="10" Text="{x:Bind Author}" HorizontalAlignment="Center" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />            
+        </Grid.RowDefinitions>
+
+        <!-- 重要,下三行似乎是固定的型式, ItemSource是指定資料來源,影片6:23,後來ItemTemplate移到最上面了 -->
+        <GridView ItemsSource="{x:Bind Books}" 
+                  IsItemClickEnabled="True" 
+                  ItemClick="GridView_ItemClick"
+                  ItemTemplate="{StaticResource BookDataTemplate}">
+        </GridView>
+        <TextBlock Grid.Row="1"
+                   Name="ResultTextBlock"
+                   FontSize="24"
+                   Foreground="Red"
+                   FontWeight="Bold"
+                   Margin="0,20,0,0" />
+    </Grid>
+</UserControl>

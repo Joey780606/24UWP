@@ -5,6 +5,7 @@
     xmlns:local="using:p01JoeyTest"
     xmlns:practice="using:p01JoeyTest.UControl.Practice" 
     xmlns:practice03="using:p01JoeyTest.UControl.Practice.Test_03"
+    xmlns:practice06="using:p01JoeyTest.UControl.Practice.Test_06"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -16,6 +17,7 @@
         <!-- <practice:Test02></practice:Test02>  -->
         <!-- <practice03:Test03></practice03:Test03> -->
         <!-- <practice:Test04></practice:Test04> -->
-        <practice:Test05></practice:Test05>
+        <!-- <practice:Test05></practice:Test05> -->
+        <practice06:Test06></practice06:Test06>
     </Grid>
 </Page>
