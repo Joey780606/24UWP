@@ -130,6 +130,14 @@
     <Compile Include="UControl\Practice\Test02.xaml.cs">
       <DependentUpon>Test02.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UControl\Practice\Test_04\Student.cs" />
+    <Compile Include="UControl\Practice\Test_04\Test04.xaml.cs">
+      <DependentUpon>Test04.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UControl\Practice\Test_03\Chapters.cs" />
+    <Compile Include="UControl\Practice\Test_03\Test03.xaml.cs">
+      <DependentUpon>Test03.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -165,6 +173,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UControl\Practice\Test02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\Practice\Test_04\Test04.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\Practice\Test_03\Test03.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
