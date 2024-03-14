@@ -1,0 +1,29 @@
+﻿<UserControl
+    x:Class="p01JoeyTest.UControl.Practice.Test_07.Test07"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:p01JoeyTest.UControl.Practice.Test_07"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <Grid>
+        <StackPanel Width="200" Margin="70">
+            <TextBlock Text="Basic slider" Margin="0 0 0 5"/>
+            <Slider x:Name="slider1" Minimum="0" Maximum="10"/>
+
+            <TextBlock Text="Slider with ValueChanged event handler" Margin="0 25 0 0"/>
+            <Slider x:Name="slider2" Minimum="0" Maximum="10" TickFrequency="2" Height="100" TickPlacement="BottomRight" ValueChanged="slider2_ValueChanged"/>
+            <TextBlock x:Name="txtResult" Margin="0 -20 0 10" Text="Current value: 0"/>
+
+            <TextBlock Text="Slider with vertical orientation" Margin="0 25 0 5"/>
+            <Slider x:Name="slider3" Minimum="0" Maximum="10" Height="100" TickPlacement="BottomRight" TickFrequency="5" Orientation="Vertical"/>
+
+            <TextBlock Text="Slider with reversed direction:" Margin="0 25 0 0"/>
+            <Slider x:Name="slider4" Minimum="0" Maximum="10" Height="100" IsDirectionReversed="True" Margin="0 0 0 0"/>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

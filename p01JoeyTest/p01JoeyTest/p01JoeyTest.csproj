@@ -145,6 +145,9 @@
     <Compile Include="UControl\Practice\Test_06\Test06.xaml.cs">
       <DependentUpon>Test06.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UControl\Practice\Test_07\Test07.xaml.cs">
+      <DependentUpon>Test07.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -196,6 +199,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UControl\Practice\Test_06\Test06.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\Practice\Test_07\Test07.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
