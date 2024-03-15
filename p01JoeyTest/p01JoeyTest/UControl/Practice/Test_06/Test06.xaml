@@ -5,9 +5,7 @@
     xmlns:local="using:p01JoeyTest.UControl.Practice.Test_06"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="400">
+    mc:Ignorable="d">
 
     <UserControl.Resources>
         <!-- 重要:如下做的目的是可利用 x:Key 為值,重覆利用 -->
@@ -29,7 +27,17 @@
         <GridView ItemsSource="{x:Bind Books}" 
                   IsItemClickEnabled="True" 
                   ItemClick="GridView_ItemClick"
-                  ItemTemplate="{StaticResource BookDataTemplate}">
+                  Height="180"
+                  ItemTemplate="{StaticResource BookDataTemplate}"
+                  ScrollViewer.HorizontalScrollMode="Enabled" 
+                  ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+                  ScrollViewer.IsHorizontalRailEnabled="True">
+
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
         </GridView>
         <TextBlock Grid.Row="1"
                    Name="ResultTextBlock"

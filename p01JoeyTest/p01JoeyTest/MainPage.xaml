@@ -16,10 +16,10 @@
     <Grid>
         <!-- <practice:Test01></practice:Test01>  -->
         <!-- <practice:Test02></practice:Test02>  -->
-        <!-- <practice03:Test03></practice03:Test03> -->
+        <!--<practice03:Test03></practice03:Test03>  -->
         <!-- <practice:Test04></practice:Test04> -->
         <!-- <practice:Test05></practice:Test05> -->
-        <!-- <practice06:Test06></practice06:Test06> -->
-        <practice07:Test07></practice07:Test07>
+        <practice06:Test06></practice06:Test06>
+        <!-- <practice07:Test07></practice07:Test07> -->
     </Grid>
 </Page>

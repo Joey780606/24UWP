@@ -15,6 +15,14 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
+/*
+ * Author: Joey
+ * Reference 1: https://www.youtube.com/playlist?list=PLaoF-xhnnrRUNVx-JAfEy_kUrGGaKS7HL
+ *   Study: 23
+ *   
+ * Reference 2: https://www.youtube.com/playlist?list=PLi2hbezQRVS0cPMeW3uDlUHnO_rPvJCV9
+ *   Study: 38
+ */
 namespace p01JoeyTest
 {
     /// <summary>
