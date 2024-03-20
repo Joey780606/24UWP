@@ -1,8 +1,10 @@
-﻿using System;
+﻿using p01JoeyTest.UControl.Practice.Page01;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Enumeration;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -30,9 +32,28 @@ namespace p01JoeyTest
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private string[] _functionInfo = { "Fuction1", "Function2" };
         public MainPage()
         {
             this.InitializeComponent();
+            foreach(string info in _functionInfo) 
+                functionCbx.Items.Add(info);
+
+            MyFrame.Navigate(typeof(Page01));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //btnSubmit.Content = functionCbx.SelectedItem.ToString();
+            MyFrame.Navigate(typeof(Page02));
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (MyFrame.CanGoBack)
+            {
+                MyFrame.GoBack();
+            }
         }
     }
 }
