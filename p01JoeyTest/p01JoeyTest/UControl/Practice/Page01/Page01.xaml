@@ -5,10 +5,21 @@
     xmlns:local="using:p01JoeyTest.UControl.Practice.Page01"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:p01JoeyTest.ViewModel"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.DataContext>
+        <viewModels:Page01ViewModel/>
+    </Page.DataContext>
+    
     <Grid>
-        <TextBlock>Page 1</TextBlock>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock>Page 1</TextBlock>
+            <Button Content="Test"></Button>
+            <TextBlock x:Name="TestValue" Text="{Binding BtTest}"></TextBlock>
+            <Button x:Name="BluetoothOn" Content="Turn on Bluetooth" Click="BluetoothOn_Click"></Button>
+            <Button x:Name="BluetoothOff" Content="Turn off Bluetooth" Click="BluetoothOff_Click"></Button>
+        </StackPanel>
     </Grid>
 </Page>

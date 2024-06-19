@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Radios;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +26,28 @@ namespace p01JoeyTest.UControl.Practice.Page01
         public Page01()
         {
             this.InitializeComponent();
+        }
+
+        private async void BluetoothOn_Click(object sender, RoutedEventArgs e)
+        {
+            var result = await Radio.RequestAccessAsync();
+            if (result == RadioAccessStatus.Allowed)
+            {
+                var bluetooth = (await Radio.GetRadiosAsync()).FirstOrDefault(radio => radio.Kind == RadioKind.Bluetooth);
+                if (bluetooth != null && bluetooth.State != RadioState.On)
+                    await bluetooth.SetStateAsync(RadioState.On);
+            }
+        }
+
+        private async void BluetoothOff_Click(object sender, RoutedEventArgs e)
+        {
+            var result = await Radio.RequestAccessAsync();
+            if (result == RadioAccessStatus.Allowed)
+            {
+                var bluetooth = (await Radio.GetRadiosAsync()).FirstOrDefault(radio => radio.Kind == RadioKind.Bluetooth);
+                if (bluetooth != null && bluetooth.State != RadioState.Off)
+                    await bluetooth.SetStateAsync(RadioState.Off);
+            }
         }
     }
 }
