@@ -26,6 +26,19 @@ namespace p01JoeyTest.UControl.Practice
         public Test01()
         {
             this.InitializeComponent();
+            funTest1();
+        }
+
+        private void funTest1()
+        {
+
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)   //記得要在這裡才能量測實際尺寸大小1
+        {
+            int cntHeight = (int)GridContent.ActualHeight;
+            int cntWidth = (int)GridContent.ActualWidth;
+            InfoText.Text = cntHeight + " , " + cntWidth;
         }
     }
 }

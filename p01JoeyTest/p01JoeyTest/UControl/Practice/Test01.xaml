@@ -7,9 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="300"
-    d:DesignWidth="400">
+    d:DesignWidth="400" Loaded="UserControl_Loaded">
 
-    <Grid Background="Yellow">
-        <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid Background="Yellow" x:Name="GridContent">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Button" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox x:Name="InfoText" Text="text"/>
+        </StackPanel>
+
     </Grid>
 </UserControl>
