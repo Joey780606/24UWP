@@ -24,8 +24,14 @@ namespace p01JoeyTest.ViewModel
         private double _leftTriggerValue=0;
 
         [ObservableProperty]
-        private double rightTriggerValue;
+        private double _leftTriggerRadiusValue = 0;
 
+        [ObservableProperty]
+        private double _rightTriggerValue=0;
+
+
+        [ObservableProperty]
+        private double _rightTriggerRadiusValue = 0;
         //= = =
         [ObservableProperty]
         private double pbLeftThumbstickX;
@@ -149,12 +155,12 @@ namespace p01JoeyTest.ViewModel
                 //f1ChangeVisibility(reading.Buttons.HasFlag(GamepadButtons.LeftShoulder), rectLeftShoulder);
                 //f1ChangeVisibility(reading.Buttons.HasFlag(GamepadButtons.RightShoulder), recRightShoulder);
 
-                //    Debug.WriteLine("L thumbstickX, Y:" + PbLeftThumbstickX + " , " + PbLeftThumbstickY);
-                //    Debug.WriteLine("R thumbstickX, Y:" + PbRightThumbstickX + " , " + PbRightThumbstickY);
+                Debug.WriteLine("L thumbstickX, Y:" + PbLeftThumbstickX + " , " + PbLeftThumbstickY);
+                Debug.WriteLine("R thumbstickX, Y:" + PbRightThumbstickX + " , " + PbRightThumbstickY);
 
                 await UIChange();
 
-                Debug.WriteLine("L,R trigger:" + PbLeftTrigger + " , " + PbRightTrigger + " , " + LeftTriggerValue);
+                //Debug.WriteLine("L,R trigger:" + PbLeftTrigger + " , " + PbRightTrigger + " , " + LeftTriggerValue);
             }
         }
 
@@ -217,6 +223,8 @@ namespace p01JoeyTest.ViewModel
             () =>
             {
                 LeftTriggerValue = PbLeftTrigger * 100;
+                LeftTriggerRadiusValue = PbLeftTrigger * -100;
+                RightTriggerRadiusValue = PbRightTrigger * 100;
                 //LeftTriggerValue += 10;
                 //MySelfUpdate = 20;
                 //LeftTriggerValue = 50;

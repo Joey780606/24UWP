@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:p01JoeyTest.ViewModel"
+    xmlns:testArea="using:p01JoeyTest.UControl.Practice"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -13,8 +14,18 @@
         <viewModels:Page01ViewModel/>
     </Page.DataContext>
     
-    <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid Background="Green">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="60*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <TextBlock>Page 1</TextBlock>
             <Button Content="Test"></Button>
             <TextBlock x:Name="TestValue" Text="{Binding BtTest}"></TextBlock>
@@ -22,6 +33,9 @@
             <Button x:Name="BluetoothOff" Content="Turn off Bluetooth" Click="BluetoothOff_Click"></Button>
 
             <Button x:Name="DownloadFile" Content="Download file" Click="DownloadFile_Click" Margin="0 10 0 0"></Button>
+
+            
         </StackPanel>
+        <testArea:GraphButtonControl1 Grid.Row="1" Grid.Column="1" x:Name="ucTest1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
     </Grid>
 </Page>

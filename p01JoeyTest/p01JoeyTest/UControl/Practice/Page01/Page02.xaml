@@ -86,14 +86,20 @@
             </controls:RadialGauge>
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Row="2">
-            <controls:RadialGauge x:Name="aaa" Grid.Column="1" Value="-40" Minimum="-100"
-                Maximum="0" TickSpacing="10" ScaleWidth="20" Unit="" TickBrush="Gainsboro"
-                ScaleTickBrush="Transparent" ScaleBrush="Blue" TrailBrush="Yellow"
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Background="LightSalmon">
+            <controls:RadialGauge x:Name="leftTrigger" Grid.Column="1" Value="{x:Bind viewModel.LeftTriggerRadiusValue, Mode=TwoWay}"  Minimum="-100" Background="LightCoral"
+                Maximum="0" TickSpacing="10" ScaleWidth="8" Unit="" TickBrush="Gainsboro"
+                ScaleTickBrush="Transparent" ScaleBrush="#FF49cacc" TrailBrush="#a2a2a2"
                 NeedleWidth="0" TickLength="5" MinAngle="180" MaxAngle="0" ValueStringFormat=" ">
+            </controls:RadialGauge>
+
+            <controls:RadialGauge x:Name="rightTrigger" Grid.Column="1" Value="{x:Bind viewModel.RightTriggerRadiusValue, Mode=TwoWay}"  Minimum="0"  Background="LightYellow"
+                Maximum="100" TickSpacing="10" ScaleWidth="8" Unit="" TickBrush="Gainsboro"
+                ScaleTickBrush="Transparent" ScaleBrush="#a2a2a2" TrailBrush="#FF49cacc"
+                NeedleWidth="0" TickLength="5" MinAngle="0" MaxAngle="180" ValueStringFormat=" ">
             </controls:RadialGauge>
         </StackPanel>
 
-        <testArea:Test01 x:Name="ucTest1" Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+        <testArea:GraphButtonControl1 x:Name="ucTest1" Grid.Column="1" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
     </Grid>
 </Page>
