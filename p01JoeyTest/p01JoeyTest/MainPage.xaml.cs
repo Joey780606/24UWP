@@ -1,6 +1,7 @@
 using p01JoeyTest.UControl.Practice.Page01;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -32,7 +33,7 @@ namespace p01JoeyTest
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private string[] _functionInfo = { "Fuction1", "Function2" };
+        private string[] _functionInfo = { "Fuction1", "Function2", "Function3" };
         public MainPage()
         {
             this.InitializeComponent();
@@ -45,7 +46,11 @@ namespace p01JoeyTest
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //btnSubmit.Content = functionCbx.SelectedItem.ToString();
-            MyFrame.Navigate(typeof(Page02));
+            Debug.WriteLine("info =" + functionCbx.SelectedItem.ToString());
+            if (functionCbx.SelectedItem.ToString() == "Function2")
+                MyFrame.Navigate(typeof(Page02));
+            else if (functionCbx.SelectedItem.ToString() == "Function3")
+                MyFrame.Navigate(typeof(Page03));
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

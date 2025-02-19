@@ -134,6 +134,9 @@
     <Compile Include="UControl\Practice\Page01\Page02.xaml.cs">
       <DependentUpon>Page02.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UControl\Practice\Page01\Page03.xaml.cs">
+      <DependentUpon>Page03.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UControl\Practice\Test01.xaml.cs">
       <DependentUpon>Test01.xaml</DependentUpon>
     </Compile>
@@ -199,6 +202,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UControl\Practice\Page01\Page02.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UControl\Practice\Page01\Page03.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
