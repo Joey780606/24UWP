@@ -47,6 +47,8 @@ namespace p01JoeyTest.UControl.Practice.Page01
         {
             this.InitializeComponent();
             viewModel = new Page02ViewModel();
+            Window.Current.CoreWindow.CharacterReceived += CoreWindow_CharacterReceived;
+           
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -68,6 +70,12 @@ namespace p01JoeyTest.UControl.Practice.Page01
         private void btnValue_Click(object sender, RoutedEventArgs e)
         {
             RadialGaugeControl.Value = 20.1;
+        }
+
+        private void CoreWindow_CharacterReceived(CoreWindow sender, CharacterReceivedEventArgs args)
+        {
+            uint keyCode = args.KeyCode;
+            Debug.WriteLine("Input key:" +  keyCode);
         }
     }
 

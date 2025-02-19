@@ -7,8 +7,109 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="using:p01JoeyTest.ViewModel"
     xmlns:testArea="using:p01JoeyTest.UControl.Practice"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+
+        <Style x:Key="SliderThumbStyle"
+           TargetType="Thumb">
+            <Setter Property="UseSystemFocusVisuals" Value="True" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="{ThemeResource SliderThumbBackground}" />
+            <Setter Property="Height" Value="16" />
+            <Setter Property="Width" Value="16" />
+            <Setter Property="FocusVisualMargin" Value="-14,-6,-14,-6" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Border Background="#FFFFFF"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="RangeSelectorTemplate1" TargetType="controls:RangeSelector">
+            <Setter Property="Background" Value="#a2a2a2" />
+            <Setter Property="BorderThickness" Value="10" />
+            <Setter Property="Foreground" Value="#49CACC" />
+            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}" />
+            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="controls:RangeSelector">
+                        <Grid x:Name="ControlGrid"
+                          Height="16">
+                            <Border x:Name="OutOfRangeContentContainer"
+                                Grid.Column="1"
+                                Background="Transparent">
+                                <Rectangle x:Name="BackgroundElement"
+                                       Height="2"
+                                       Fill="{TemplateBinding Background}" />
+                            </Border>
+
+                            <Canvas x:Name="ContainerCanvas"
+                                Grid.Column="1"
+                                Background="Transparent">
+                                <Rectangle x:Name="ActiveRectangle"
+                                       Height="2"
+                                       HorizontalAlignment="Stretch"
+                                       VerticalAlignment="Center"
+                                       Fill="{TemplateBinding Foreground}" />
+
+                                <Thumb x:Name="MinThumb"
+                                   AutomationProperties.Name="Min thumb"
+                                   IsTabStop="True"
+                                   Style="{StaticResource SliderThumbStyle}"
+                                   TabIndex="0" />
+                                <Thumb x:Name="MaxThumb"
+                                   AutomationProperties.Name="Max thumb"
+                                   IsTabStop="True"
+                                   Style="{StaticResource SliderThumbStyle}"
+                                   TabIndex="1" />
+                            </Canvas>
+
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BackgroundElement"
+                                                                       Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{ThemeResource SystemControlDisabledBaseLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ActiveRectangle"
+                                                                       Storyboard.TargetProperty="Fill">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{ThemeResource SystemControlDisabledBaseLowBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MinThumb"
+                                                                       Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{ThemeResource SystemControlDisabledChromeDisabledHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="MaxThumb"
+                                                                       Storyboard.TargetProperty="Background">
+                                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{ThemeResource SystemControlDisabledChromeDisabledHighBrush}" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
 
     <Page.DataContext>
         <viewModels:Page01ViewModel/>
@@ -37,5 +138,12 @@
             
         </StackPanel>
         <testArea:GraphButtonControl1 Grid.Row="1" Grid.Column="1" x:Name="ucTest1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+
+        <controls:RangeSelector Style="{StaticResource RangeSelectorTemplate1}" Grid.Column="1" x:Name="RangeSelectorControl"
+            Minimum="0"
+            Maximum="100"
+            StepFrequency="2"
+            VerticalAlignment="Center">
+        </controls:RangeSelector>
     </Grid>
 </Page>

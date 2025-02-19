@@ -27,25 +27,25 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Canvas Width="600" Height="400" Background="BlueViolet">
                 <Image Source="Assets/xbox-one-controller.png" Width="400" Height="400"/>
-                <TextBlock Name="lblA" FontSize="25" FontWeight="Bold" Foreground="#FF2CFD78" Visibility="Visible" Canvas.Left="294" Canvas.Top="165">A</TextBlock>
+                <TextBlock Name="lblA" FontSize="25" FontWeight="Bold" Foreground="#FF2CFD78" Visibility="{x:Bind viewModel.BtnAVisibility, Mode=TwoWay}" Canvas.Left="294" Canvas.Top="165">A</TextBlock>
                 <TextBlock Name="lblB" FontSize="25" FontWeight="Bold" Foreground="#FFFD2C2C" Visibility="Visible" Canvas.Left="324" Canvas.Top="141" >B</TextBlock>
-                <TextBlock Name="lblY" FontSize="25" FontWeight="Bold" Foreground="Yellow" Visibility="Visible" Canvas.Left="296" Canvas.Top="111" >Y</TextBlock>
-                <TextBlock Name="lblX" FontSize="25" FontWeight="Bold" Foreground="#FF1CB5CD" Visibility="Visible" Canvas.Left="267" Canvas.Top="139" >X</TextBlock>
-                <TextBlock Name="lblMenu" FontSize="25" FontWeight="Bold" Foreground="#FFE9E7EE" Visibility="Visible" Canvas.Left="221" Canvas.Top="138" >=</TextBlock>
-                <TextBlock Name="lblDPadLeft" FontSize="25" FontWeight="Bold" Foreground="#FFE9E7EE" Visibility="Visible" Canvas.Left="122" Canvas.Top="201" >o</TextBlock>
-                <TextBlock Name="lblDPadRight" FontSize="25" FontWeight="Bold" Foreground="#FFE9E7EE" Visibility="Visible" Canvas.Left="159" Canvas.Top="201" >o</TextBlock>
-                <TextBlock Name="lblDPadUp" FontSize="25" FontWeight="Bold" Foreground="#FFE9E7EE" Visibility="Visible" Canvas.Left="139" Canvas.Top="183" >o</TextBlock>
-                <TextBlock Name="lblDPadDown" FontSize="25" FontWeight="Bold" Foreground="#FFE9E7EE" Visibility="Visible" Canvas.Left="139" Canvas.Top="221" >o</TextBlock>
-                <TextBlock Name="lblView" FontSize="25" FontWeight="Bold" Foreground="#FF7D8DF0" Visibility="Visible" Canvas.Left="165" Canvas.Top="135" Height="32" Width="16" >::</TextBlock>
+                <TextBlock Name="lblY" FontSize="25" FontWeight="Bold" Foreground="Yellow" Visibility="Collapsed" Canvas.Left="296" Canvas.Top="111" >Y</TextBlock>
+                <TextBlock Name="lblX" FontSize="25" FontWeight="Bold" Foreground="#FF1CB5CD" Visibility="Collapsed" Canvas.Left="267" Canvas.Top="139" >X</TextBlock>
+                <TextBlock Name="lblMenu" FontSize="25" FontWeight="Bold" Foreground="#FFE9E7EE" Visibility="Collapsed" Canvas.Left="221" Canvas.Top="138" >=</TextBlock>
+                <TextBlock Name="lblDPadLeft" FontSize="25" FontWeight="Bold" Foreground="#FFE9E7EE" Visibility="Collapsed" Canvas.Left="122" Canvas.Top="201" >o</TextBlock>
+                <TextBlock Name="lblDPadRight" FontSize="25" FontWeight="Bold" Foreground="#FFE9E7EE" Visibility="Collapsed" Canvas.Left="159" Canvas.Top="201" >o</TextBlock>
+                <TextBlock Name="lblDPadUp" FontSize="25" FontWeight="Bold" Foreground="#FFE9E7EE" Visibility="Collapsed" Canvas.Left="139" Canvas.Top="183" >o</TextBlock>
+                <TextBlock Name="lblDPadDown" FontSize="25" FontWeight="Bold" Foreground="#FFE9E7EE" Visibility="Collapsed" Canvas.Left="139" Canvas.Top="221" >o</TextBlock>
+                <TextBlock Name="lblView" FontSize="25" FontWeight="Bold" Foreground="#FF7D8DF0" Visibility="Collapsed" Canvas.Left="165" Canvas.Top="135" Height="32" Width="16" >::</TextBlock>
 
-                <Ellipse Name="ellRightThumbstick" Width="50" Height="50" Fill="#FFB43D3D" Opacity="0.5" Canvas.Left="228" Canvas.Top="191" Visibility="Visible"></Ellipse>
-                <Ellipse Name="ellLeftThumbstick" Width="50" Height="50" Fill="#FFB43D3D" Opacity="0.5" Canvas.Left="73" Canvas.Top="131" Visibility="Visible"></Ellipse>
-                <Rectangle Name="recRightShoulder" Width="63.074" Height="9.396" Fill="#FF10121D" Opacity="0.9" Canvas.Left="278.23" Canvas.Top="77.516" Visibility="Visible" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <Ellipse Name="ellRightThumbstick" Width="50" Height="50" Fill="#FFB43D3D" Opacity="0.5" Canvas.Left="228" Canvas.Top="191" Visibility="Collapsed"></Ellipse>
+                <Ellipse Name="ellLeftThumbstick" Width="50" Height="50" Fill="#FFB43D3D" Opacity="0.5" Canvas.Left="73" Canvas.Top="131" Visibility="Collapsed"></Ellipse>
+                <Rectangle Name="recRightShoulder" Width="63.074" Height="9.396" Fill="#FF10121D" Opacity="0.9" Canvas.Left="278.23" Canvas.Top="77.516" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
                     <Rectangle.RenderTransform>
                         <CompositeTransform Rotation="19.178"/>
                     </Rectangle.RenderTransform>
                 </Rectangle>
-                <Rectangle Name="rectLeftShoulder" Width="63.933" Height="8.606" Fill="#FF10121D" Opacity="0.9" Canvas.Left="62.216" Canvas.Top="76.683" Visibility="Visible" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+                <Rectangle Name="rectLeftShoulder" Width="63.933" Height="8.606" Fill="#FF10121D" Opacity="0.9" Canvas.Left="62.216" Canvas.Top="76.683" Visibility="Collapsed" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
                     <Rectangle.RenderTransform>
                         <CompositeTransform Rotation="-15.006"/>
                     </Rectangle.RenderTransform>

@@ -54,6 +54,12 @@ namespace p01JoeyTest.ViewModel
         [ObservableProperty]
         private double _mySelfUpdate;
 
+        //[ObservableProperty]
+        //private string _btnAVisibility;
+
+        [ObservableProperty]
+        private string _btnAVisibility = "Collapsed";
+
         [ObservableProperty]
         private string _eventInfo;
 
@@ -123,7 +129,7 @@ namespace p01JoeyTest.ViewModel
 
         private async void f1dispatcherTimer_Tick(object sender, object e)
         {
-            Debug.WriteLine("timer testing:" + MySelfUpdate + " , " + LeftTriggerValue);
+            //Debug.WriteLine("timer testing:" + MySelfUpdate + " , " + LeftTriggerValue);
             //MySelfUpdate = 20;
             if (Gamepad.Gamepads.Count > 0)
             {
@@ -138,6 +144,18 @@ namespace p01JoeyTest.ViewModel
 
                 PbLeftTrigger = reading.LeftTrigger;
                 PbRightTrigger = reading.RightTrigger;
+
+                if (reading.Buttons.HasFlag(GamepadButtons.A))
+                {
+                    BtnAVisibility = "Visible";
+                    Debug.WriteLine("Btn A in:" + reading.Buttons.ToString());
+                }
+                else
+                {
+                    BtnAVisibility = "Collapsed";
+                    Debug.WriteLine("Btn A out: " + reading.Buttons.ToString() );
+                }
+
 
                 //https://msdn.microsoft.com/en-us/library/windows/apps/windows.gaming.input.gamepadbuttons.aspx
                 //f1ChangeVisibility(reading.Buttons.HasFlag(GamepadButtons.A), lblA);
@@ -162,6 +180,8 @@ namespace p01JoeyTest.ViewModel
 
                 //Debug.WriteLine("L,R trigger:" + PbLeftTrigger + " , " + PbRightTrigger + " , " + LeftTriggerValue);
             }
+
+            //if(Window.Current.CoreWindow.GetKeyState(Windows.System.VirtualKey))
         }
 
         #region EventHandlers
