@@ -9,6 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Button x:Name="P0001_Lambda" Content="0001 Lamdba" Margin="568,86,0,0" VerticalAlignment="Top" Height="45" Width="206" Click="P0001_Lambda_Click" />
 
     </Grid>
 </Page>
