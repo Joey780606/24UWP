@@ -1,7 +1,13 @@
 ﻿1.程式記錄:
-第1頁開始: 記錄到第九頁
+第1頁開始: 記錄到第18頁
 
 2. .csproj 可設定 C# language version.
 <PropertyGroup>
   <LangVersion>preview</LangVersion>
 </PropertyGroup>
+
+3.26個字母為首關鍵字集合
+ a.
+ b.
+ u. [unsafe context]
+

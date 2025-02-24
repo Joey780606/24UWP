@@ -184,6 +184,8 @@
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="UControl\Practice\Page01\CSharpSpec.txt" />
+    <Content Include="UControl\Practice\Page01\KeywordABC.txt" />
+    <Content Include="UControl\Practice\Page01\KeywordSTU.txt" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
