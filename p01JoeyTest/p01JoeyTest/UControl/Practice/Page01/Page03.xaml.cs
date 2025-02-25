@@ -114,6 +114,59 @@ namespace p01JoeyTest.UControl.Practice.Page01
             //Debug.WriteLine($"nint.MinValue = {nint.MaxValue}");
             //Debug.WriteLine($"nint.MinValue = {nuint.MinValue}");
             //Debug.WriteLine($"nint.MinValue = {nuint.MaxValue}");
+
+            //浮點數
+            Debug.WriteLine("Float point area");
+            double doubleA = 12.3;
+            System.Double doubleB = 12.3;
+
+            //數值尾數(suffix)為d,D是 double 型態
+            //數值尾數(suffix)為f,F是 float 型態
+            //數值尾數(suffix)為m,M是 decimal 型態
+            double doubleC = 1.0;
+            decimal doubleD = 2.1m;
+            Debug.WriteLine("Float Test 1:" + (doubleC + (double)doubleD)); //結果是3.3
+            Debug.WriteLine("Float Test 2:" + (decimal)(doubleC + (double)doubleD));    //結果是3.3
+
+            double doubleE = 3D;
+            doubleE = 4d;
+            doubleE = 3.934_001;
+            doubleE = 0.43e2;   //output 42
+
+            float doubleF = 3_000.5F;
+            doubleF = 5.4f;
+            doubleF = 134.45E-2f;   //output 1.3445
+
+            decimal myMoney = 3_000.5m;
+            myMoney = 400.75M;
+            myMoney = 1.5E6m;   //output 1500000
+
+            //bool
+            bool check = true;
+            Debug.WriteLine(check ? "Checked" : "Not checked"); //重要
+
+            //char p29
+            var chars = new[] { 'j', '\u006A', '\x006A', (char)106, };
+            Debug.WriteLine(string.Join(" ", chars));   //重要
+        }
+
+        private void P1001_Nullable_Click(object sender, RoutedEventArgs e)
+        {
+            //p105 重要,裡面的說明要找時間看
+            string notNull = "Hello";
+            string? nullable = default;
+            notNull = nullable!;
+
+            //p106
+            //var nullEmpty = System.String?.Empty; //Not allowed
+            //var maybeObject = new Object?();  //Not allowed, Object是不能被指為 null 的            
+            //try   //Not allowed,但不知為什麼
+            //{
+            //    if (notNull is string ? nullableString)
+            //        Debug.WriteLine(nullableString);
+            //} catch (Exception? ex) {
+            //    Debug.WriteLine(ex.ToString());
+            //}
         }
     }
 }
