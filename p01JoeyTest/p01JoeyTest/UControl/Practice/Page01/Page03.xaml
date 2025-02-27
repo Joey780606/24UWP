@@ -10,9 +10,10 @@
 
     <Grid>
         <Button x:Name="P0001_Lambda" Content="0001 Lamdba" Margin="568,86,0,0" VerticalAlignment="Top" Height="45" Width="206" Click="P0001_Lambda_Click" />
-        <Button x:Name="P0002_Lambda" Content="0002_Lambda" Margin="568,140,0,0" VerticalAlignment="Top" Width="206" Click="P0002_Lambda_Click"/>
-        <Button x:Name="P0003_Variable"  Content="0003_Variable" Margin="568,187,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.039,0.045" Width="206" Click="P0003_Variable_Click"/>
-        <Button x:Name="P1001_Nullable" Content="1001_Nullable" Margin="817,10,0,0" VerticalAlignment="Top" Click="P1001_Nullable_Click"/>
+        <Button x:Name="P0002_Lambda" Content="0002 Lambda" Margin="568,140,0,0" VerticalAlignment="Top" Width="206" Click="P0002_Lambda_Click"/>
+        <Button x:Name="P0003_Variable"  Content="0003 Variable" Margin="568,187,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.039,0.045" Width="206" Click="P0003_Variable_Click"/>
+        <Button x:Name="P1001_Nullable" Content="1001 Nullable" Margin="817,10,0,0" VerticalAlignment="Top" Click="P1001_Nullable_Click"/>
+        <Button x:Name="P0003_Enum"  Content="0003 Enum" Margin="568,237,0,0" VerticalAlignment="Top" Width="206" Click="P0003_Enum_Click"/>
 
     </Grid>
 </Page>

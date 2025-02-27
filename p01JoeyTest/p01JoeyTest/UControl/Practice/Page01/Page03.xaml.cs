@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Composition;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -21,8 +22,40 @@ namespace p01JoeyTest.UControl.Practice.Page01
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
+
+
     public sealed partial class Page03 : Page
     {
+        //enum p32, 重要,enum須要放在最前面
+        enum enumSeason
+        {   //Sample 1
+            Spring,
+            Summer,
+            Autumn,
+            Winter
+        }
+
+        enum enumErrorCode : ushort
+        {
+            None = 0,
+            Unknown = 1,
+            ConnectionLost = 100,
+            OutlierReading = 200
+        }
+
+        public enum enumDays
+        {
+            None = 0b_0000_0000,    // 0
+            Monday = 0b_0000_0001,  // 1
+            Tuesday = 0b_0000_0010, // 2
+            Wednesday = 0b_0000_0100,    // 4
+            Thursday = 0b_0000_1000,  // 8
+            Friday = 0b_0001_0000, // 16
+            Saturday = 0b_0010_0000,    // 32
+            Sunday = 0b_0100_0000,  // 64
+            Weekend = Saturday | Sunday
+        }
+
         public Page03()
         {
             this.InitializeComponent();
@@ -148,25 +181,56 @@ namespace p01JoeyTest.UControl.Practice.Page01
             //char p29
             var chars = new[] { 'j', '\u006A', '\x006A', (char)106, };
             Debug.WriteLine(string.Join(" ", chars));   //重要
+
+
+        }
+
+        private void P0003_Enum_Click(object sender, RoutedEventArgs e) //P33
+        {
+            enumDays meetingDays = enumDays.Monday | enumDays.Wednesday | enumDays.Friday;
+            Debug.WriteLine($"meeting is: {meetingDays}");   //重要,官網文件寫會出現 Monday, Wednesday, Friday, 但實測只有出現數字值21
+
+            enumDays workingFromHomeDays = enumDays.Thursday | enumDays.Friday;
+            Debug.WriteLine($"Join a meeting by phone on {meetingDays & workingFromHomeDays}");
+
+            bool isMeetingOnTuesday = (meetingDays & enumDays.Tuesday) == enumDays.Tuesday;
+            Debug.WriteLine($"Is there a meeting on Tuesday: {isMeetingOnTuesday}");
+
+            var a = (enumDays)37;
+            Debug.WriteLine($"37 is: {a}");
+
+            Debug.WriteLine("= = = Separator = = =");
+
+            enumSeason season1 = enumSeason.Autumn;
+            Debug.WriteLine($"Integral value of {a} is {(int)season1}");
+
+            var season2 = (enumSeason)1;
+            Debug.WriteLine($"Season2 is: {season2}");
+
+            season2 = (enumSeason)4;
+            Debug.WriteLine($"Season2-2 is: {season2}");
+
+            season2 = (enumSeason)2;
+            Debug.WriteLine($"Season2 is: {season2}");
         }
 
         private void P1001_Nullable_Click(object sender, RoutedEventArgs e)
         {
-            //p105 重要,裡面的說明要找時間看
-            string notNull = "Hello";
-            string? nullable = default;
-            notNull = nullable!;
+                //p105 重要,裡面的說明要找時間看
+                string notNull = "Hello";
+                string? nullable = default;
+                notNull = nullable!;
 
-            //p106
-            //var nullEmpty = System.String?.Empty; //Not allowed
-            //var maybeObject = new Object?();  //Not allowed, Object是不能被指為 null 的            
-            //try   //Not allowed,但不知為什麼
-            //{
-            //    if (notNull is string ? nullableString)
-            //        Debug.WriteLine(nullableString);
-            //} catch (Exception? ex) {
-            //    Debug.WriteLine(ex.ToString());
-            //}
+                //p106
+                //var nullEmpty = System.String?.Empty; //Not allowed
+                //var maybeObject = new Object?();  //Not allowed, Object是不能被指為 null 的            
+                //try   //Not allowed,但不知為什麼
+                //{
+                //    if (notNull is string ? nullableString)
+                //        Debug.WriteLine(nullableString);
+                //} catch (Exception? ex) {
+                //    Debug.WriteLine(ex.ToString());
+                //}
         }
     }
 }
