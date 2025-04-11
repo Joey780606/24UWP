@@ -33,7 +33,7 @@ namespace p01JoeyTest
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private string[] _functionInfo = { "Fuction1", "Function2", "Function3", "Page20Task", "MouseLine" };
+        private string[] _functionInfo = { "Fuction1", "Function2", "Function3", "Page20Task", "MouseLine", "PolyLine01" };
         public MainPage()
         {
             this.InitializeComponent();
@@ -55,6 +55,8 @@ namespace p01JoeyTest
                 MyFrame.Navigate(typeof(Page20Task));
             else if (functionCbx.SelectedItem.ToString() == "MouseLine")
                 MyFrame.Navigate(typeof(MouseLine));
+            else if (functionCbx.SelectedItem.ToString() == "PolyLine01")
+                MyFrame.Navigate(typeof(PolyLine01));
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

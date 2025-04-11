@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="p01JoeyTest.UControl.Practice.Page01.PolyLine01"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:p01JoeyTest.UControl.Practice.Page01"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+    <Canvas x:Name="drawingCanvas" Background="LightGray">
+        <Polyline x:Name="draggablePolyline"
+                  Points="50,50 150,50 100,100"
+                  Stroke="Black"
+                  StrokeThickness="2" />
+    </Canvas>
+</Page>

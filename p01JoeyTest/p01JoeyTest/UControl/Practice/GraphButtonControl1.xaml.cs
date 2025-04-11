@@ -44,14 +44,18 @@ namespace p01JoeyTest.UControl.Practice
             cntWidth = (int)GraphControl.ActualWidth;
             InfoText.Text = "Height: " + cntHeight + " ,Width: " + cntWidth;
 
+            //Define the border
             gridInfo.h_start = 10;
             gridInfo.w_start = 10;
             gridInfo.h_interval = (cntHeight - 20) / 10;
             gridInfo.w_interval = (cntWidth - 20) / 10;
-            GridCanvasProcess2(cntHeight, cntWidth);
+            GridCanvasProcess2(cntHeight, cntWidth);    //畫邊際線
             GridPointList();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void GridPointList()
         {
             Debug.WriteLine("Point info:" + gridInfo.w_start + pntPosition[0, 0] * gridInfo.w_interval + " , " + PointButton1.ActualWidth + " , " + PointButton1.ActualHeight);
@@ -59,6 +63,7 @@ namespace p01JoeyTest.UControl.Practice
             PointButton1.Margin = new Thickness(gridInfo.w_start + pntPosition[1, 0] * gridInfo.w_interval - (PointButton1.ActualWidth / 2), gridInfo.h_start + pntPosition[1, 1] * gridInfo.h_interval - (PointButton1.ActualHeight / 2), 0, 0);
             PointButton2.Margin = new Thickness(gridInfo.w_start + pntPosition[2, 0] * gridInfo.w_interval - (PointButton2.ActualWidth / 2), gridInfo.h_start + pntPosition[2, 1] * gridInfo.h_interval - (PointButton2.ActualHeight / 2), 0, 0);
             PointButton3.Margin = new Thickness(gridInfo.w_start + pntPosition[3, 0] * gridInfo.w_interval - (PointButton3.ActualWidth / 2), gridInfo.h_start + pntPosition[3, 1] * gridInfo.h_interval - (PointButton3.ActualHeight / 2), 0, 0);
+
             GrinDrawLine();
         }
 
@@ -107,6 +112,11 @@ namespace p01JoeyTest.UControl.Practice
             GridCanvas.UpdateLayout();
         }
 
+        /// <summary>
+        /// Draw 10 x and y axis line.
+        /// </summary>
+        /// <param name="h"></param>
+        /// <param name="w"></param>
         private void GridCanvasProcess2(int h, int w)    // It work.
         {
             double h_start = 10;
@@ -146,44 +156,6 @@ namespace p01JoeyTest.UControl.Practice
                 GridCanvas.Children.Add(line);
             }
             GridCanvas.UpdateLayout();
-        }
-
-        private void GridCanvasProcess(int h, int w)    // It work.
-        {
-            for (int i = 0; i < GridCanvas.Children.Count; i++)
-            {
-                GridCanvas.Children.Remove(GridCanvas.Children[i]);
-            }
-
-            for (int c = 0; c < w; c += 10)
-            {
-                Line line = new Line
-                {
-                    X1 = c,
-                    X2 = c,
-                    Y1 = 0,
-                    Y2 = h,
-                    StrokeThickness = 1
-                };
-
-                line.Stroke = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));  // It needs "using Windows.UI;"
-                GridCanvas.Children.Add(line);
-            }
-
-            for (int r = 0; r < h; r += 10)
-            {
-                Line line = new Line
-                {
-                    X1 = 0,
-                    X2 = w,
-                    Y1 = r,
-                    Y2 = r,
-                    StrokeThickness = 1
-                };
-
-                line.Stroke = new SolidColorBrush(Color.FromArgb(255, 255, 0, 0));
-                GridCanvas.Children.Add(line);
-            }
         }
 
         private void GraphControl_SizeChanged(object sender, SizeChangedEventArgs e)
